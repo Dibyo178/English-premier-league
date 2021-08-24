@@ -3,14 +3,29 @@ import { CgGenderMale } from 'react-icons/cg';
 import { FaFlag } from 'react-icons/fa';
 import { IoMdFootball } from 'react-icons/io';
 import { TiLocationOutline } from 'react-icons/ti';
+import female from '../../../Photo/female.png';
 import male from '../../../Photo/male.png';
 import './TeamInfo.scss';
 
 
 const TeamInfo = (props) => {
     const [link,setLink] = useState([props.item])
-    // console.log(data)
+
+    // const {strGender}=link[0];
+    //  console.log(link[0])
+
+    //  const gender;
+    //   if()
     const {strTeam,intFormedYear,strCountry,strGender,idTeam} = props.item;
+
+    let gender;
+
+    if(strGender==='Male'){
+        gender = <img src={male} alt=""/>
+    }
+    else if(strGender==='Female'){
+        gender = <img src={female} alt=""/>
+    }
     return (
         <div className='container d-flex'>
             <div className='col-md-6 '>
@@ -23,11 +38,14 @@ const TeamInfo = (props) => {
               </div>
             </div>
             <div className='col-md-6'>
-             <img src={male} alt="" />
+              
+              {gender}
+   
+             {/* <img src={male} alt="" /> */}
             </div>
             {/* {
             //    link.map(info=><Footer key={info.idTeam} info={info}></Footer>)
-            link.map(info=><Footer info={info}></Footer>)            } */}
+            link[0].map(info=><Footer info={info}></Footer>)            } */}
         </div>
 
         

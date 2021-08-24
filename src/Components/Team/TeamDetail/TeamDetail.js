@@ -10,8 +10,10 @@ const TeamDetail = () => {
      const [info,setInfo] =useState([]);
     const [data,setData] = useState([]);
         // console.log(data);
+        // console.log(info)
+  
 
-    //  console.log(info)
+
 
      useEffect(() => {
       const url= `https://www.thesportsdb.com/api/v1/json/1/lookupteam.php?id=${id}`;
